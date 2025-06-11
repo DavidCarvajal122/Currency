@@ -21,13 +21,37 @@ namespace Currency.ViewModels
                 {
                     _valorUSD = value;
                     OnPropertyChanged();
+                    CambiarDeDolaresAEuros();
+                }
+            }
+        }
+        public string ValorEUR
+        {
+            get => _valorEUR;
+            set
+            {
+                if (_valorEUR != value)
+                {
+                    _valorEUR = value;
+                    OnPropertyChanged();
+                    CambiarDeEurosADolares();
                 }
             }
         }
 
-        public void CambiarDeDolaresAEuros { 
+        public void CambiarDeDolaresAEuros() {
 
+            double euros = Double.Parse(ValorUSD) * 0.87;
+            _valorEUR = euros.ToString();
         }
+
+        public void CambiarDeEurosADolares()
+        {
+            double dolares = Double.Parse(ValorEUR) * 1.15;
+            _valorUSD = dolares.ToString();
+        }
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string name = "") =>
