@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Currency.ViewModels"
+             x:Class="Currency.CambioDivisas"
+             Title="CambioDivisas">
+    
+    <ContentPage.BindingContext>
+        <local:CambioDivisasViewModel/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <Label
+            Text="USD"/>
+        <Entry
+            x:Name="ValorUSD"
+            Text="{Binding ValorUSD}"
+            />
+        <Label 
+            Text="Euros"
+            />
+        <Entry
+            x:Name="ValorEuros"
+            Text="{Binding ValorEUR}"
+            />
+    </VerticalStackLayout>
+</ContentPage>

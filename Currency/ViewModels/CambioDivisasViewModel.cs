@@ -34,7 +34,7 @@ namespace Currency.ViewModels
                 {
                     _valorEUR = value;
                     OnPropertyChanged();
-                    CambiarDeEurosADolares();
+                    //CambiarDeEurosADolares();
                 }
             }
         }
