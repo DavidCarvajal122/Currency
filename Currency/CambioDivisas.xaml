@@ -23,5 +23,10 @@
             x:Name="ValorEuros"
             Text="{Binding ValorEUR}"
             />
+        <Button
+            x:Name="BotonReiniciar"
+            Text="Reiniciar valores"
+            Command="{Binding ComandoReiniciaValores}"
+            />
     </VerticalStackLayout>
 </ContentPage>

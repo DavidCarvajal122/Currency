@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Currency.ViewModels
 {
@@ -38,9 +39,22 @@ namespace Currency.ViewModels
                 }
             }
         }
+        public ICommand ComandoReiniciaValores { get; set; }
+
+        public CambioDivisasViewModel()
+        {
+            ComandoReiniciaValores = new Command(async() => await ReiniciarValores());
+        }
+        public async Task ReiniciarValores()
+        {
+            ValorUSD = "0";
+            ValorEUR = "0";
+        }
+
 
         public void CambiarDeDolaresAEuros() {
 
+            //Error
             double euros = Double.Parse(ValorUSD) * 0.87;
             _valorEUR = euros.ToString();
         }
